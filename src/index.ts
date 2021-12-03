@@ -1,6 +1,10 @@
-import Instagram from './instagram'
+import * as dotenv from "dotenv";
+import Instagram from './instagram';
+
+dotenv.config();
 
 (async () => {
   const ig = new Instagram();
-  ig.initialize({headless:false})
+  await ig.initialize({headless:false})
+  await ig.login()
 })()
